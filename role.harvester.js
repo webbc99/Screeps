@@ -22,8 +22,9 @@ module.exports = {
                 //filter: (s) => s.energy < s.energyCapacity
             //})
             //||
-            var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                filter: (s) => s.energy < s.energyCapacity
+            var structure = room.find(FIND_STRUCTURES, {
+              filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
+                   i.store[RESOURCE_ENERGY] > 0
             });
             // if we found one
             if (structure != undefined) {
