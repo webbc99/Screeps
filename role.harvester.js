@@ -23,6 +23,9 @@ module.exports = {
             });
             if (structure == undefined){
               structure = creep.room.storage;
+              if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                  // move towards it
+                  creep.moveTo(structure);
             }
             // if we found one
             if (structure != undefined) {
