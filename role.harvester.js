@@ -15,16 +15,11 @@ module.exports = {
         // if creep is supposed to transfer energy to the spawn or an extension
         if (creep.memory.working == true) {
             // find closest spawn or extension which is not full
-            //var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+            var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                 // the second argument for findClosestByPath is an object which takes
                 // a property called filter which can be a function
                 // we use the arrow operator to define it
-                //filter: (s) => s.energy < s.energyCapacity
-            //})
-            //||
-            var structure = creep.room.find(FIND_STRUCTURES, {
-              filter: (i) => i.structureType == STRUCTURE_CONTAINER &&
-                   i.store[RESOURCE_ENERGY] < i.storeCapacity[RESOURCE_ENERGY]
+                filter: (s) => s.energy < s.energyCapacity
             });
             // if we found one
             if (structure != undefined) {
