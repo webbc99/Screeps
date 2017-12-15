@@ -39,19 +39,19 @@ module.exports.loop = function () {
             {memory: {role: 'harvester', working: false}});
     }
 
-        if(builders.length < 1 && harvesters.length != 1) {
+        if(builders.length < 1 && harvesters.length != 0) {
         var newName = 'Builder' + Game.time;
         console.log('Spawning new builder: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
             {memory: {role: 'builder', working: false}});
     }
-        if(upgraders.length < 1 && harvesters.length != 4) {
+        if(upgraders.length < 4 && harvesters.length != 0) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
             {memory: {role: 'upgrader', working: false}});
     }
-        if(repairers.length < 1 && harvesters.length != 1) {
+        if(repairers.length < 1 && harvesters.length != 0) {
         var newName = 'Repairer' + Game.time;
         console.log('Spawning new repairer: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
@@ -64,7 +64,7 @@ module.exports.loop = function () {
             {memory: {role: 'cleaner', working: false}});
     }
 
-        if(wallguys.length < 1 && harvesters.length != 1) {
+        if(wallguys.length < 1 && harvesters.length != 0) {
         var newName = 'Wallguy' + Game.time;
         console.log('Spawning new wallguy: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
