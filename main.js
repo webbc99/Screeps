@@ -5,6 +5,15 @@ var roleRepairer = require('role.repairer');
 var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
+var maxHarvesters = 2
+var maxUpgraders = 4
+var maxBuilders = 1
+var maxRepairers = 1
+var maxCleaners = 0
+var maxWallguys = 1
+
+var minHarvesters = 1
+
 module.exports.loop = function () {
 
     for(var name in Memory.creeps) {
@@ -32,39 +41,39 @@ module.exports.loop = function () {
     var wallguys = _.filter(Game.creeps, (creep) => creep.memory.role == 'wallguy');
     console.log('Wallguy: ' + wallguys.length);
 
-       if(harvesters.length < 2) {
+       if(harvesters.length < maxHarvesters) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'harvester', working: false}});
     }
 
-        if(builders.length < 1 && harvesters.length != 0) {
+        if(builders.length < maxBuilders && harvesters.length > minHarvesters) {
         var newName = 'Builder' + Game.time;
         console.log('Spawning new builder: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'builder', working: false}});
     }
-        if(upgraders.length < 4 && harvesters.length != 0) {
+        if(upgraders.length < maxUpgraders && harvesters.length > minHarvesters) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'upgrader', working: false}});
     }
-        if(repairers.length < 1 && harvesters.length != 0) {
+        if(repairers.length < maxRepairers && harvesters.length > minHarvesters) {
         var newName = 'Repairer' + Game.time;
         console.log('Spawning new repairer: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'repairer', working: false}});
     }
-        if(cleaners.length < 0 && harvesters.length != 0) {
+        if(cleaners.length < maxCleaners && harvesters.length > minHarvesters) {
         var newName = 'Cleaner' + Game.time;
         console.log('Spawning new cleaner: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,CARRY,MOVE], newName,
             {memory: {role: 'cleaner', working: false}});
     }
 
-        if(wallguys.length < 1 && harvesters.length != 0) {
+        if(wallguys.length < maxWallguys && harvesters.length > minHarvesters) {
         var newName = 'Wallguy' + Game.time;
         console.log('Spawning new wallguy: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
