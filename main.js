@@ -6,7 +6,7 @@ var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
 var maxHarvesters = 2
-var maxUpgraders = 4
+var maxUpgraders = 5
 var maxBuilders = 1
 var maxRepairers = 1
 var maxCleaners = 0
