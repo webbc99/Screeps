@@ -35,39 +35,39 @@ module.exports.loop = function () {
        if(harvesters.length < 2) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'harvester', working: false}});
     }
 
         if(builders.length < 1 && harvesters.length != 0) {
         var newName = 'Builder' + Game.time;
         console.log('Spawning new builder: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'builder', working: false}});
     }
         if(upgraders.length < 4 && harvesters.length != 0) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'upgrader', working: false}});
     }
         if(repairers.length < 1 && harvesters.length != 0) {
         var newName = 'Repairer' + Game.time;
         console.log('Spawning new repairer: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'repairer', working: false}});
     }
         if(cleaners.length < 0 && harvesters.length != 0) {
         var newName = 'Cleaner' + Game.time;
         console.log('Spawning new cleaner: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,CARRY], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,CARRY,MOVE], newName,
             {memory: {role: 'cleaner', working: false}});
     }
 
         if(wallguys.length < 1 && harvesters.length != 0) {
         var newName = 'Wallguy' + Game.time;
         console.log('Spawning new wallguy: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'wallguy', working: false}});
     }
 
