@@ -22,7 +22,9 @@ module.exports = {
                 filter: (s) => s.energy < s.energyCapacity
             });
             if (structure == undefined){
-              structure = creep.room.storage;
+              structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                filter: (s) => (s.structureType == STRUCTURE_CONTAINER)
+              });
             }
             // if we found one
             if (structure != undefined) {
