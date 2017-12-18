@@ -18,7 +18,7 @@ module.exports = {
                 // the second argument for findClosestByPath is an object which takes
                 // a property called filter which can be a function
                 // we use the arrow operator to define it
-                filter: (s) => s.hits < (s.hitsMax / 3000) && s.structureType == STRUCTURE_WALL
+                filter: (s) => s.hits < (s.hitsMax / 1500) && s.structureType == STRUCTURE_WALL
             });
             // if we find one
             if (structure != undefined) {
