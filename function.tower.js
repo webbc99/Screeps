@@ -1,22 +1,8 @@
 module.exports = {
 
-    //TOWER CODE
     run: function(myRooms) {
 
-        /*
 
-        ORIGINAL TOWER CODE
-
-        //TOWER CODE
-        var towers = Game.rooms.W61S27.find(FIND_STRUCTURES, {filter: (s) => s.structureType == STRUCTURE_TOWER});
-        for (let tower of towers) {
-            var target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-            if (target != undefined) {
-                tower.attack(target);
-            }
-        }
-
-        */
 
         var hostiles = Game.rooms[myRooms].find(FIND_HOSTILE_CREEPS);
         var towers = Game.rooms[myRooms].find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});

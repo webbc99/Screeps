@@ -5,7 +5,7 @@ var roleRepairer = require('role.repairer');
 var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
-var tower = require('tower');
+var tower = require('function.tower');
 var myRooms = 'E41N35';
 
 
