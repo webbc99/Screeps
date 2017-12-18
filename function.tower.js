@@ -31,7 +31,6 @@ module.exports = {
            for(var i in towers){
                 //...repair Buildings! :) But ONLY until HALF the energy of the tower is gone.
                 //Because we don't want to be exposed if something shows up at our door :)
-                console.log('Test!');
                 if(towers[i].energy > (towers[i].energyCapacity * 0.5)){
 
                     //Find the closest damaged Structure
