@@ -1,7 +1,7 @@
 module.exports = {
 
     //TOWER CODE
-var myRooms = Game.rooms.owner(Aerodyne);
+
     run: function(myRooms) {
       tower.say('test!');
 

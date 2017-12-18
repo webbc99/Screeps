@@ -5,6 +5,9 @@ var roleRepairer = require('role.repairer');
 var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
+var tower = require('tower');
+var myRooms = Game.rooms.owner(Aerodyne);
+
 var maxHarvesters = 2
 var maxUpgraders = 6
 var maxBuilders = 1
@@ -15,6 +18,7 @@ var maxWallguys = 1
 var minHarvesters = 1
 
 module.exports.loop = function () {
+tower.run(myRooms);
 
     for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {
