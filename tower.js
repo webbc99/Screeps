@@ -18,8 +18,8 @@ module.exports = {
 
         */
 
-        var hostiles = Game.rooms[E41N35].find(FIND_HOSTILE_CREEPS);
-        var towers = Game.rooms[E41N35].find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
+        var hostiles = Game.rooms[myRooms].find(FIND_HOSTILE_CREEPS);
+        var towers = Game.rooms[myRooms].find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
 
         //if there are hostiles - attakc them
         if(hostiles.length > 0) {
