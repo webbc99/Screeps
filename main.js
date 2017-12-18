@@ -6,6 +6,7 @@ var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
 var tower = require('function.tower');
+var towerRepair = false;
 var myRooms = 'E41N35';
 
 
@@ -20,7 +21,7 @@ var minHarvesters = 1
 
 module.exports.loop = function () {
 
-    tower.run(myRooms);
+    tower.run(myRooms, towerRepair);
 
     for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {
