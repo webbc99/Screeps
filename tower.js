@@ -24,7 +24,7 @@ module.exports = {
         var towers = Game.rooms[myRooms].find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
 
         //if there are hostiles - attakc them
-        if(hostiles.length > 0) {
+        if(hostiles.length === 0) {
             var username = hostiles[0].owner.username;
             Game.notify(`User ${username} spotted in room ${myRoomName}`);
             towers.forEach(tower => tower.attack(hostiles[0]));
