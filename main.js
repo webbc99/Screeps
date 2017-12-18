@@ -18,8 +18,9 @@ var maxWallguys = 1
 var minHarvesters = 1
 
 module.exports.loop = function () {
-  var myRooms = _.filter(Game.rooms, (room) => room.owner === 'Aerodyne');
-tower.run(myRooms);
+
+
+  var myRooms = Game.rooms[E41N35];
 
     for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {
