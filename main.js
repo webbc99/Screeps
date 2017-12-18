@@ -6,7 +6,7 @@ var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
 var tower = require('function.tower');
-var towerRepair = false;
+var towerRepair;
 
 var myRooms = 'E41N35';
 
@@ -17,11 +17,9 @@ var maxRepairers = 1
 var maxCleaners = 0
 var maxWallguys = 1
 
-var minHarvesters = 1
+var minHarvesters = 2
 
 module.exports.loop = function () {
-
-    tower.run(myRooms, towerRepair);
 
     for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {
@@ -48,7 +46,24 @@ module.exports.loop = function () {
     var wallguys = _.filter(Game.creeps, (creep) => creep.memory.role == 'wallguy');
     console.log('Wallguy: ' + wallguys.length);
 
-       if(harvesters.length < maxHarvesters) {
+
+
+        if (harvesters.length =< minHarvesters) {
+        towerRepair = false;
+    }
+        else {
+        towerRepair = true;
+    }
+
+
+        if (Game.spawns['Spawn1'].room.find(FIND_DROPPED_RESOURCES) > 0){
+        maxCleaners = 1;
+    }
+        else {
+        maxCleaners = 0;
+    }
+
+        if(harvesters.length < maxHarvesters) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
         Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
@@ -116,5 +131,6 @@ module.exports.loop = function () {
         if(creep.memory.role == 'wallguy') {
             roleWallguy.run(creep);
         }
+        tower.run(myRooms, towerRepair);
     }
 }
