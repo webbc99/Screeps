@@ -6,7 +6,7 @@ var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
 var tower = require('tower');
-var myRooms = Game.rooms.find(Game.spawns['Spawn1'].owner);
+var myRooms = _.filter(Game.rooms.owner === 'Aerodyne');
 
 var maxHarvesters = 2
 var maxUpgraders = 6
