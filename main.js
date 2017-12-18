@@ -6,7 +6,7 @@ var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
 var tower = require('tower');
-var myRooms = Game.rooms.owner(spawns.Spawn1.owner);
+var myRooms = Game.rooms.owner(Game.spawns['Spawn1'].owner);
 
 var maxHarvesters = 2
 var maxUpgraders = 6
