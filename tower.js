@@ -33,7 +33,7 @@ module.exports = {
 
         //if there are no hostiles....
         if(hostiles.length === 0) {
-
+console.log('test');
             //....first heal any damaged creeps
             for (let name in Game.creeps) {
                 // get the creep object
