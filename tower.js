@@ -18,7 +18,7 @@ var myRooms = Game.rooms.owner(Aerodyne);
         }
 
         */
-    
+
         var hostiles = myRooms.find(FIND_HOSTILE_CREEPS);
         var towers = myRooms.find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
 
@@ -44,6 +44,7 @@ var myRooms = Game.rooms.owner(Aerodyne);
             }
 
            for(var i in towers){
+             tower.say('test!');
                 //...repair Buildings! :) But ONLY until HALF the energy of the tower is gone.
                 //Because we don't want to be exposed if something shows up at our door :)
                 if(towers.energy > ((towers.energyCapacity / 10)* 9)){
