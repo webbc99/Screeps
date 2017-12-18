@@ -49,7 +49,7 @@ module.exports = {
                 if(true){
 
                     //Find the closest damaged Structure
-                    var closestDamagedStructure = towers.pos.findClosestByRange(FIND_STRUCTURES, {filter: (s) => s.hits < s.hitsMax/* && s.structureType != STRUCTURE_WALL*/});
+                    var closestDamagedStructure = towers[i].pos.findClosestByRange(FIND_STRUCTURES, {filter: (s) => s.hits < s.hitsMax/* && s.structureType != STRUCTURE_WALL*/});
     	            if(closestDamagedStructure) {
     	 	            towers.repair(closestDamagedStructure);
     	 	            console.log("The tower is repairing buildings.");
