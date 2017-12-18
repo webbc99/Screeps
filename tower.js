@@ -1,5 +1,3 @@
-
-
 module.exports = {
 
     //TOWER CODE
@@ -51,7 +49,7 @@ module.exports = {
                 if(towers.energy > ((towers.energyCapacity / 10)* 9)){
 
                     //Find the closest damaged Structure
-                    var closestDamagedStructure = towers.pos.findClosestByRange(FIND_STRUCTURES, {filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL});
+                    var closestDamagedStructure = towers.pos.findClosestByRange(FIND_STRUCTURES, {filter: (s) => s.hits < s.hitsMax/* && s.structureType != STRUCTURE_WALL*/});
     	            if(closestDamagedStructure) {
     	 	            towers.repair(closestDamagedStructure);
     	 	            console.log("The tower is repairing buildings.");
