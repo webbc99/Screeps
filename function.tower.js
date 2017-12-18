@@ -38,8 +38,8 @@ module.exports = {
 
                     towers[i].room.visual.text(
                         'The tower is repairing ' + closestDamagedStructure.structureType,
-                        towers.pos.x + 1,
-                        towers.pos.y,
+                        towers[i].pos.x + 1,
+                        towers[i].pos.y,
                         {align: 'left', opacity: 0.8});
 
     	            if(closestDamagedStructure) {
