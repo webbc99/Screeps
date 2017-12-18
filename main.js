@@ -48,7 +48,7 @@ module.exports.loop = function () {
 
 
 
-        if (harvesters.length =< minHarvesters) {
+        if (harvesters.length <= minHarvesters) {
         towerRepair = false;
     }
         else {
