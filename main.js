@@ -19,6 +19,7 @@ var maxWallguys = 1
 var minHarvesters = 1
 
 module.exports.loop = function () {
+
     tower.run(myRooms);
 
     for(var name in Memory.creeps) {
