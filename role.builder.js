@@ -8,7 +8,7 @@ module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
       decideState.run(creep);
-        
+
         if (creep.memory.working == true) {
 
             var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
@@ -17,7 +17,7 @@ module.exports = {
 
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
                     // move towards it
-                    creep.moveTo(constructionSite);
+                    creep.moveTo(constructionSite, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
             }
 
