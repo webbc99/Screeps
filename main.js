@@ -6,6 +6,7 @@ var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
 var tower = require('tower');
+var myRooms = 'E41N35';
 
 
 var maxHarvesters = 2
@@ -18,9 +19,6 @@ var maxWallguys = 1
 var minHarvesters = 1
 
 module.exports.loop = function () {
-
-
-  var myRooms = 'E41N35';
 
     for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {
