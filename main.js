@@ -7,11 +7,11 @@ var roleWallguy = require('role.wallguy');
 
 var tower = require('function.tower');
 var towerRepair = false;
+
 var myRooms = 'E41N35';
 
-
-var maxHarvesters = 2
-var maxUpgraders = 6
+var maxHarvesters = 3
+var maxUpgraders = 3
 var maxBuilders = 1
 var maxRepairers = 1
 var maxCleaners = 0
