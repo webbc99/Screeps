@@ -34,7 +34,6 @@ module.exports = {
 
             //....first heal any damaged creeps
             for (let name in Game.creeps) {
-              console.log(name);
                 // get the creep object
                 var creep = Game.creeps[name];
                 if (creep.hits < creep.hitsMax) {
@@ -47,7 +46,7 @@ module.exports = {
                 //...repair Buildings! :) But ONLY until HALF the energy of the tower is gone.
                 //Because we don't want to be exposed if something shows up at our door :)
                 if(towers.energy > ((towers.energyCapacity / 10)* 9)){
-
+console.log('Test!');
                     //Find the closest damaged Structure
                     var closestDamagedStructure = towers.pos.findClosestByRange(FIND_STRUCTURES, {filter: (s) => s.hits < s.hitsMax/* && s.structureType != STRUCTURE_WALL*/});
     	            if(closestDamagedStructure) {
