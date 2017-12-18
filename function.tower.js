@@ -37,7 +37,7 @@ module.exports = {
                       filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL});
 
                     towers.room.visual.text(
-                        'The tower is repairing ' + closestDamagedStructure.structureType.to_s
+                        'The tower is repairing ' + closestDamagedStructure.Structure.structureType
                         towers.pos.x + 1,
                         towers.pos.y,
                         {align: 'left', opacity: 0.8});
