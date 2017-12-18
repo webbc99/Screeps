@@ -36,7 +36,7 @@ module.exports = {
                     var closestDamagedStructure = towers[i].pos.findClosestByRange(FIND_STRUCTURES, {
                       filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL});
 
-                    towers.room.visual.text(
+                    towers[i].room.visual.text(
                         'The tower is repairing ' + closestDamagedStructure.structureType,
                         towers.pos.x + 1,
                         towers.pos.y,
