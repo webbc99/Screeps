@@ -19,7 +19,7 @@ module.exports = {
         }
 
         */
-for (var i in towers){
+for (var i in myRooms){
         var hostiles = myRooms.find(FIND_HOSTILE_CREEPS);
         var towers = myRooms.find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
           towers.say('test!');
