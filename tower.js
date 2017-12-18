@@ -3,7 +3,7 @@ module.exports = {
     //TOWER CODE
 
     run: function(myRooms) {
-      tower.say('test!');
+
 
         /*
 
@@ -22,7 +22,7 @@ module.exports = {
 
         var hostiles = myRooms.find(FIND_HOSTILE_CREEPS);
         var towers = myRooms.find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
-
+          towers.say('test!');
         //if there are hostiles - attakc them
         if(hostiles.length > 0) {
             var username = hostiles[0].owner.username;
