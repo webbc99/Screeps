@@ -20,7 +20,7 @@ var minHarvesters = 1
 module.exports.loop = function () {
 
 
-  var myRooms = Game.rooms[E41N35];
+  var myRooms = 'E41N35';
 
     for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {

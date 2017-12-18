@@ -1,9 +1,7 @@
 module.exports = {
 
     //TOWER CODE
-
     run: function(myRooms) {
-
 
         /*
 
@@ -19,10 +17,10 @@ module.exports = {
         }
 
         */
-for (var i in myRooms){
-        var hostiles = myRooms.find(FIND_HOSTILE_CREEPS);
-        var towers = myRooms.find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
-          towers.say('test!');
+
+        var hostiles = Game.rooms[myRooms].find(FIND_HOSTILE_CREEPS);
+        var towers = Game.rooms[myRooms].find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
+
         //if there are hostiles - attakc them
         if(hostiles.length > 0) {
             var username = hostiles[0].owner.username;
@@ -40,12 +38,11 @@ for (var i in myRooms){
                 var creep = Game.creeps[name];
                 if (creep.hits < creep.hitsMax) {
                     towers.forEach(tower => tower.heal(creep));
-                    console.log("Tower is healing creeps.");
+                    console.log("Tower is healing Creeps.");
                 }
             }
 
            for(var i in towers){
-             tower.say('test!');
                 //...repair Buildings! :) But ONLY until HALF the energy of the tower is gone.
                 //Because we don't want to be exposed if something shows up at our door :)
                 if(towers.energy > ((towers.energyCapacity / 10)* 9)){
@@ -61,5 +58,4 @@ for (var i in myRooms){
 
         }
     }
-  }
 };
