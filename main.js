@@ -6,7 +6,7 @@ var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
 
 var tower = require('function.tower');
-var towerRepair;
+var towerRepair = false;
 
 var myRooms = 'E41N35';
 
@@ -47,14 +47,15 @@ module.exports.loop = function () {
     console.log('Wallguy: ' + wallguys.length);
 
 
-
-        if (harvesters.length <= minHarvesters) {
+//Commented out code block to automate towerRepair - this is costing too much energy and taking time
+//away from the Harvesters. To-do: get a unit to exclusively restore power to Towers from a container/storage
+  /*      if (harvesters.length <= minHarvesters) {
         towerRepair = false;
     }
         else {
         towerRepair = true;
     }
-
+  */
 
         if (Game.spawns['Spawn1'].room.find(FIND_DROPPED_RESOURCES) > 0){
         maxCleaners = 1;
