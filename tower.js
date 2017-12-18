@@ -17,7 +17,7 @@ module.exports = {
         }
 
         */
-
+        tower.say('test!');
         var hostiles = Game.rooms[myRooms].find(FIND_HOSTILE_CREEPS);
         var towers = Game.rooms[myRooms].find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
 
