@@ -18,7 +18,7 @@ var roleCleaner = {
             });
             if(targets.length > 0) {
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets[0], {visualizePathStyle: {fill: '#41c4f4'}});
+                    creep.moveTo(targets[0], {visualizePathStyle: {opacity: 1, stroke: '#41c4f4'}});
                 }
             }
         }

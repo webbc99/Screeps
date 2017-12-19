@@ -25,7 +25,7 @@ module.exports = {
                 // try to repair it, if it is out of range
                 if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
                     // move towards it
-                    creep.moveTo(structure, {visualizePathStyle: {fill: '#ff0000'}});
+                    creep.moveTo(structure, {visualizePathStyle: {opacity: 1, stroke: '#ff0000'}});
                 }
             }
             // if we can't fine one
