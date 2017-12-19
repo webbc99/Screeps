@@ -17,7 +17,7 @@ var maxRepairers = 2
 var maxCleaners = 0
 var maxWallguys = 0
 
-var minHarvesters = 2
+var minHarvesters = 1
 
 module.exports.loop = function () {
 
