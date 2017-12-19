@@ -5,14 +5,6 @@ var roleBuilder = require('role.builder');
 var decideState = require('function.decideState');
 var drainSource = require('function.drainSource');
 
-//repairTargets
-var repairTargets = [
-                     STRUCTURE_CONTAINER,
-                     STRUCTURE_WALL,
-                     STRUCTURE_TOWER,
-                     STRUCTURE_ROAD
-                   ];
-
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
@@ -22,9 +14,8 @@ module.exports = {
             // find closest structure with less than max hits
             // Exclude walls because they have way too many max hits and would keep
             // our repairers busy forever. We have to find a solution for that later.
-            var contains =  repairTargets.Contains(STRUCTURE_WALL);
             var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-              filter: (s) => s.hits < (s.hitsMax * 0.5) && contains === true
+              filter: (s) => s.hits < (s.hitsMax * 0.5) && s.structureType === STRUCTURE_CONTAINER
             });
             if (structure === undefined) {
 
