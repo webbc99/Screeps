@@ -26,7 +26,7 @@ module.exports = {
                 filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
 
             });
-        //  }
+            }
             // if we find one
             if (structure != undefined) {
                 // try to repair it, if it is out of range
