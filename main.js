@@ -12,10 +12,10 @@ var myRooms = 'E41N35';
 
 var maxHarvesters = 3
 var maxUpgraders = 3
-var maxBuilders = 1
-var maxRepairers = 1
+var maxBuilders = 0
+var maxRepairers = 2
 var maxCleaners = 0
-var maxWallguys = 1
+var maxWallguys = 0
 
 var minHarvesters = 2
 
