@@ -67,7 +67,7 @@ module.exports.loop = function () {
         if(harvesters.length < maxHarvesters) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'harvester', working: false}});
     }
 
@@ -80,13 +80,13 @@ module.exports.loop = function () {
         if(upgraders.length < maxUpgraders && harvesters.length > minHarvesters) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'upgrader', working: false}});
     }
         if(repairers.length < maxRepairers && harvesters.length > minHarvesters) {
         var newName = 'Repairer' + Game.time;
         console.log('Spawning new repairer: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'repairer', working: false}});
     }
         if(cleaners.length < maxCleaners && harvesters.length > minHarvesters) {
