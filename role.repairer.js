@@ -17,7 +17,7 @@ module.exports = {
             var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
               filter: (s) => s.hits < (s.hitsMax * 0.9) && s.structureType === STRUCTURE_CONTAINER
             });
-            if (structure === undefined) { */
+            if (structure === undefined) {
 
             var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                 // the second argument for findClosestByPath is an object which takes
