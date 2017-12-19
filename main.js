@@ -10,8 +10,8 @@ var towerRepair = false;
 
 var myRooms = 'E41N35';
 
-var maxHarvesters = 3
-var maxUpgraders = 3
+var maxHarvesters = 2
+var maxUpgraders = 4
 var maxBuilders = 0
 var maxRepairers = 2
 var maxCleaners = 0
@@ -74,7 +74,7 @@ module.exports.loop = function () {
         if(builders.length < maxBuilders && harvesters.length > minHarvesters) {
         var newName = 'Builder' + Game.time;
         console.log('Spawning new builder: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'builder', working: false}});
     }
         if(upgraders.length < maxUpgraders && harvesters.length > minHarvesters) {
@@ -92,14 +92,14 @@ module.exports.loop = function () {
         if(cleaners.length < maxCleaners && harvesters.length > minHarvesters) {
         var newName = 'Cleaner' + Game.time;
         console.log('Spawning new cleaner: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,CARRY,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,CARRY,MOVE], newName,
             {memory: {role: 'cleaner', working: false}});
     }
 
         if(wallguys.length < maxWallguys && harvesters.length > minHarvesters) {
         var newName = 'Wallguy' + Game.time;
         console.log('Spawning new wallguy: ' + newName);
-        Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'wallguy', working: false}});
     }
 
