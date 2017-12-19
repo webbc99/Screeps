@@ -5,26 +5,20 @@ var roleBuilder = require('role.builder');
 var decideState = require('function.decideState');
 var drainSource = require('function.drainSource');
 
+
 module.exports = {
     // a function to run the logic for this role
     run: function(creep) {
         decideState.run(creep);
         // if creep is supposed to repair something
-        if (creep.memory.working == true) {
-            // find closest structure with less than max hits
-            // Exclude walls because they have way too many max hits and would keep
-            // our repairers busy forever. We have to find a solution for that later.
-          //  var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-            //  filter: (s) => s.hits < (s.hitsMax * 0.8)
-              // && s.structureType === STRUCTURE_CONTAINER
-          //  });
-          //  if (structure === undefined) {
+        if (creep.memory.working == true)
+            if (structure === undefined) {
 
             var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                 // the second argument for findClosestByPath is an object which takes
                 // a property called filter which can be a function
                 // we use the arrow operator to define it
-                filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
+                filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL && s.structureType != STRUCTURE_ROAD
 
             });
             }
@@ -41,7 +35,7 @@ module.exports = {
                 // look for construction sites
                 roleBuilder.run(creep);
             }
-        }
+
         // if creep is supposed to harvest energy from source
         else {
             drainSource.run(creep);
