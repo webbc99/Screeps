@@ -4,6 +4,7 @@ var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
 var roleCleaner = require('role.cleaner');
 var roleWallguy = require('role.wallguy');
+var roleRoadguy = require('role.roadguy');
 
 var tower = require('function.tower');
 var towerRepair = false;
@@ -45,6 +46,9 @@ module.exports.loop = function () {
 
     var wallguys = _.filter(Game.creeps, (creep) => creep.memory.role == 'wallguy');
     console.log('Wallguy: ' + wallguys.length);
+
+    var roadguys = _.filter(Game.creeps, (creep) => creep.memory.role == 'roadguy');
+    console.log('Roadguy: ' + roadguys.length);
 
 
 //Commented out code block to automate towerRepair - this is costing too much energy and taking time
@@ -103,6 +107,15 @@ module.exports.loop = function () {
             {memory: {role: 'wallguy', working: false}});
     }
 
+        if(roadguys.length < maxRoadguys && harvesters.length >= minHarvesters) {
+        var newName = 'Roadguy' + Game.time;
+        console.log('Spawning new Roadguy: ' + newName);
+        Game.spawns['Spawn1'].spawnCreep([WORK,WORK,WORK,CARRY,CARRY,MOVE], newName,
+        {memory: {role: 'roadguy', working: false}});
+    }
+
+
+
     if(Game.spawns['Spawn1'].spawning) {
         var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name];
         Game.spawns['Spawn1'].room.visual.text(
@@ -132,6 +145,10 @@ module.exports.loop = function () {
         if(creep.memory.role == 'wallguy') {
             roleWallguy.run(creep);
         }
+        if(creep.memory.role == 'roadguy') {
+            roleRoadguy.run(creep);
+        }
+        
         tower.run(myRooms, towerRepair);
     }
 }
