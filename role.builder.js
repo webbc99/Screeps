@@ -17,7 +17,7 @@ module.exports = {
 
                 if (creep.build(constructionSite) == ERR_NOT_IN_RANGE) {
                     // move towards it
-                    creep.moveTo(constructionSite, {visualizePathStyle: {lineStyle: '#f4ce42'}});
+                    creep.moveTo(constructionSite, {visualizePathStyle: {lineStyle, color: '#f4ce42'}});
                 }
             }
 
