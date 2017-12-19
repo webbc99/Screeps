@@ -17,6 +17,7 @@ var maxBuilders = 2
 var maxRepairers = 1
 var maxCleaners = 0
 var maxWallguys = 0
+var maxRoadguys = 1
 
 var minHarvesters = 1
 
@@ -148,7 +149,7 @@ module.exports.loop = function () {
         if(creep.memory.role == 'roadguy') {
             roleRoadguy.run(creep);
         }
-        
+
         tower.run(myRooms, towerRepair);
     }
 }
