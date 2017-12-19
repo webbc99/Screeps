@@ -14,11 +14,11 @@ module.exports = {
             // find closest structure with less than max hits
             // Exclude walls because they have way too many max hits and would keep
             // our repairers busy forever. We have to find a solution for that later.
-            var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-              filter: (s) => s.hits < (s.hitsMax * 0.8)
+          //  var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+            //  filter: (s) => s.hits < (s.hitsMax * 0.8)
               // && s.structureType === STRUCTURE_CONTAINER
-            });
-            if (structure === undefined) {
+          //  });
+          //  if (structure === undefined) {
 
             var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                 // the second argument for findClosestByPath is an object which takes
