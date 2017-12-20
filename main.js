@@ -12,8 +12,8 @@ var towerRepair = false;
 var myRooms = 'E41N35';
 
 var maxHarvesters = 2
-var maxUpgraders = 1
-var maxBuilders = 2
+var maxUpgraders = 6
+var maxBuilders = 0
 var maxRepairers = 1
 var maxCleaners = 0
 var maxWallguys = 0
