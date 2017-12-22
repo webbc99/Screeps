@@ -8,7 +8,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
         // find all creeps in room
         /** @type {Array.<Creep>} */
         let creepsInRoom = room.find(FIND_MY_CREEPS);
-        
+
         // count the number of creeps alive for each role in this room
         // _.sum will count the number of properties in Game.creeps filtered by the
         //  arrow function, which checks for the creep being a specific role
@@ -83,7 +83,7 @@ StructureSpawn.prototype.spawnCreepsIfNecessary =
                 }
             }
         }
-        
+
         // if none of the above caused a spawn command check for LongDistanceHarvesters
         /** @type {Object.<string, number>} */
         let numberOfLongDistanceHarvesters = {};
@@ -174,7 +174,7 @@ StructureSpawn.prototype.createClaimer =
 // create a new function for StructureSpawn
 StructureSpawn.prototype.createMiner =
     function (sourceId) {
-        return this.createCreep([WORK, WORK, WORK, WORK, WORK, MOVE], undefined,
+        return this.createCreep([WORK, WORK, WORK, MOVE], undefined,
                                 { role: 'miner', sourceId: sourceId });
     };
 
