@@ -39,15 +39,26 @@ module.exports = {
                     creep.moveTo(structure, {visualizePathStyle: {stroke: '#6e42f4', opacity: 1}});
                 }
             }
-            // if no constructionSite is found
-            else {
-                // go upgrading the controller
-                roleUpgrader.run(creep);
-            }
         }
-        // if creep is supposed to harvest energy from source
+        // if creep is supposed to get energy
         else {
-            creep.getEnergy(false, true);
+            // find closest container
+            let container = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                filter: s => s.structureType == STRUCTURE_CONTAINER && s.store[RESOURCE_ENERGY] > 0
+            });
+
+            if (container == undefined) {
+                container = creep.room.storage;
+            }
+
+            // if one was found
+            if (container != undefined) {
+                // try to withdraw energy, if the container is not in range
+                if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    // move towards it
+                    creep.moveTo(container, {visualizePathStyle: {stroke: '#0000ff', opacity: 1}});
+                }
+            }
         }
     }
 };
