@@ -1,4 +1,6 @@
 // import modules
+/*
+
 require('prototype.creep');
 require('prototype.tower');
 require('prototype.spawn');
@@ -37,3 +39,4 @@ module.exports.loop = function() {
         Game.spawns[spawnName].spawnCreepsIfNecessary();
     }
 };
+*/
